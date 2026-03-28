@@ -50,5 +50,3 @@ src/
 - `npm run preview` — preview production build
 
 ---
-
-If you want this tailored to a different organization or industry, update the copy in `src/App.tsx` and the imagery used in the visual sections.
