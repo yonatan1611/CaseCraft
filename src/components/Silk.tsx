@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { forwardRef, useLayoutEffect, useMemo, useRef } from 'react';
-import { Color, Mesh } from 'three';
+import { Color, Mesh, ShaderMaterial } from 'three';
 
 type SilkUniforms = {
   uSpeed: { value: number };
@@ -102,7 +102,10 @@ const SilkPlane = forwardRef<Mesh, SilkPlaneProps>(function SilkPlane({ uniforms
 
   useFrame((_, delta) => {
     if (ref && typeof ref !== 'function' && ref.current) {
-      ref.current.material.uniforms.uTime.value += 0.1 * delta;
+      const material = ref.current.material;
+      if (material instanceof ShaderMaterial) {
+        material.uniforms.uTime.value += 0.1 * delta;
+      }
     }
   });
 
