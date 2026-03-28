@@ -10,6 +10,7 @@ import SpotlightCard from './components/SpotlightCard';
 import StarBorder from './components/StarBorder';
 import TiltedCard from './components/TiltedCard';
 import TrueFocus from './components/TrueFocus';
+import Waves from './components/Waves';
 
 const heroImage =
   'https://images.unsplash.com/photo-1758551059627-e891d671e010?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=2600';
@@ -375,8 +376,18 @@ export default function App() {
           </div>
         </section>
 
-        <section className="py-24">
-          <div className={`${containerClass}`}>
+        <section className="relative overflow-hidden py-24">
+          <div className="absolute inset-0 opacity-50">
+            <Waves
+              lineColor="rgba(124, 58, 237, 0.5)"
+              backgroundColor="transparent"
+              waveAmpX={16}
+              waveAmpY={10}
+              xGap={18}
+              yGap={34}
+            />
+          </div>
+          <div className={`${containerClass} relative`}>
             <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-white/5 via-white/0 to-white/5 px-8 py-16 text-center backdrop-blur">
               <p className="text-xs uppercase tracking-[0.5em] text-white/60">Asteria Standard</p>
               <h2 className="mt-6 text-4xl font-semibold text-white md:text-6xl">

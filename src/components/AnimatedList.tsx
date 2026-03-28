@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback, ReactNode, MouseEventHandler, UIEvent } from 'react';
+import React, { useRef, useState, useEffect, useCallback, type ReactNode, type MouseEventHandler, type UIEvent } from 'react';
 import { motion, useInView } from 'motion/react';
 
 interface AnimatedItemProps {
